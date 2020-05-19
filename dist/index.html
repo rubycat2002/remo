@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>remo</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-firestore.js"></script>
+
+    <script>
+      var firebaseConfig = {
+        apiKey: "AIzaSyCO2h3A5xlptpAqxkt3YSzW14DWCkw9bQA",
+        authDomain: "remo-65c4d.firebaseapp.com",
+        databaseURL:  "https://remo-65c4d.firebaseio.com",
+        projectId:  "remo-65c4d",
+        storageBucket:"remo-65c4d.appspot.com",
+        messagingSenderId: "822034646990",
+        appId: "1:822034646990:web:693977a2ad933df8c14d9f",
+        measurementId:"G-ERRLPEFH3Q"
+      };
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
+    <script src="./build.js"></script>
+  </body>
+</html>
