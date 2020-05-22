@@ -76,7 +76,7 @@ module.exports = {
     extensions: ['*', '.js', '.vue', '.json']
   },
   devServer: {
-    contentBase:'dist',//’Ç‰Á
+    contentBase: 'dist',
     historyApiFallback: true,
     noInfo: true,
     overlay: true
@@ -94,12 +94,6 @@ if (process.env.NODE_ENV === 'production') {
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: '"production"'
-      }
-    }),
-    new webpack.optimize.UglifyJsPlugin({
-      sourceMap: false,
-      compress: {
-        warnings: false
       }
     }),
     new webpack.LoaderOptionsPlugin({
