@@ -1,10 +1,10 @@
 <template>
   <div id="home">
-    <img src="../assets/logo.png" />
     <h1>{{ msg }}</h1>
-    <button @click="googleLogin">google login</button>
+    <button @click="googleLogin">Googleアカウントでログイン</button>
   </div>
 </template>
+
 <script>
 export default {
   name: "home",

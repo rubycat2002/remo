@@ -10,9 +10,10 @@
           v-for="(memo,index) in memos"
           :key="index"
           @click="selectMemo(index)"
-          :data-selected="index == selectedIndex"
-        >
+          :data-selected="index == selectedIndex">
           <p class="memoTitle">{{displayTitle(memo.markdown)}}</p>
+          <textarea class="markdown"=v-model="memos[selectedIndex].markdown"></textarea>           
+          <div class="preview markdown-body" v-html="preview()"></div>
         </div>
         <button class="addMemoBtn" @click="addMemo">メモの追加</button>
         <button class="deleteMemoBtn" v-if="memos.length > 1" @click="deleteMemo">選択中のメモの削除</button>
