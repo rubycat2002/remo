@@ -10,10 +10,9 @@
           v-for="(memo,index) in memos"
           :key="index"
           @click="selectMemo(index)"
-          :data-selected="index == selectedIndex">
+          :data-selected="index == selectedIndex"
+        >
           <p class="memoTitle">{{displayTitle(memo.markdown)}}</p>
-          <textarea class="markdown"=v-model="memos[selectedIndex].markdown"></textarea>           
-          <div class="preview markdown-body" v-html="preview()"></div>
         </div>
         <button class="addMemoBtn" @click="addMemo">メモの追加</button>
         <button class="deleteMemoBtn" v-if="memos.length > 1" @click="deleteMemo">選択中のメモの削除</button>
@@ -52,17 +51,6 @@ export default {
         }
       });
   },
-  mounted: function() {
-    document.onkeydown = e => {
-      if (e.key == "s" && (e.metaKey || e.ctrlKey)) {
-        this.saveMemos();
-        return false;
-      }
-    };
-  },
-  beforeDestroy: function() {
-    document.onkeydown = null;
-  },
   methods: {
     logout: function() {
       firebase.auth().sighnOut();
@@ -93,6 +81,17 @@ export default {
         .ref("memos/" + this.user.uid)
         .set(this.memos);
     }
+  },
+  mounted: function() {
+    document.onkeydown = e => {
+      if (e.key == "s" && (e.metaKey || e.ctrlKey)) {
+        this.saveMemos();
+        return false;
+      }
+    };
+  },
+  beforeDestroy: function() {
+    document.onkeydown = null;
   }
 };
 </script>
@@ -102,7 +101,7 @@ export default {
   display: flex;
 }
 .memoListWrapper {
-  weight: 20%;
+  width: 20%;
   border-top: 1px solid #000;
 }
 .memoList {
